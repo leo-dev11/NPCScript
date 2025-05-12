@@ -1,0 +1,13 @@
+npc "guerrero" iniciaEn "patrullar"
+
+@estado "patrullar"
+    mover("norte");
+    if enemigoCerca() then goto "atacar"
+
+@estado "atacar"
+    atacar();
+    if enemigoHuye() then goto "perseguir"
+
+@estado "perseguir"
+    mover("enemigo");
+    if perdidoDeVista() then goto "patrullar"
