@@ -3,7 +3,7 @@ from runtime.NPCScriptLexer import NPCScriptLexer
 from runtime.NPCScriptParser import NPCScriptParser
 
 def main():
-    archivo = FileStream("examples/prueba.npc", encoding="utf-8")
+    archivo = FileStream("examples/npcInitialState.npc", encoding="utf-8")
     lexer = NPCScriptLexer(archivo)
     stream = CommonTokenStream(lexer)
     parser = NPCScriptParser(stream)

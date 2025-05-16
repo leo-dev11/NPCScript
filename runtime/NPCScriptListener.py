@@ -35,6 +35,15 @@ class NPCScriptListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by NPCScriptParser#onEvent.
+    def enterOnEvent(self, ctx:NPCScriptParser.OnEventContext):
+        pass
+
+    # Exit a parse tree produced by NPCScriptParser#onEvent.
+    def exitOnEvent(self, ctx:NPCScriptParser.OnEventContext):
+        pass
+
+
     # Enter a parse tree produced by NPCScriptParser#statement.
     def enterStatement(self, ctx:NPCScriptParser.StatementContext):
         pass
@@ -53,6 +62,87 @@ class NPCScriptListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by NPCScriptParser#whileStatement.
+    def enterWhileStatement(self, ctx:NPCScriptParser.WhileStatementContext):
+        pass
+
+    # Exit a parse tree produced by NPCScriptParser#whileStatement.
+    def exitWhileStatement(self, ctx:NPCScriptParser.WhileStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NPCScriptParser#transitionStatement.
+    def enterTransitionStatement(self, ctx:NPCScriptParser.TransitionStatementContext):
+        pass
+
+    # Exit a parse tree produced by NPCScriptParser#transitionStatement.
+    def exitTransitionStatement(self, ctx:NPCScriptParser.TransitionStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NPCScriptParser#assignment.
+    def enterAssignment(self, ctx:NPCScriptParser.AssignmentContext):
+        pass
+
+    # Exit a parse tree produced by NPCScriptParser#assignment.
+    def exitAssignment(self, ctx:NPCScriptParser.AssignmentContext):
+        pass
+
+
+    # Enter a parse tree produced by NPCScriptParser#sayStatement.
+    def enterSayStatement(self, ctx:NPCScriptParser.SayStatementContext):
+        pass
+
+    # Exit a parse tree produced by NPCScriptParser#sayStatement.
+    def exitSayStatement(self, ctx:NPCScriptParser.SayStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NPCScriptParser#choiceStatement.
+    def enterChoiceStatement(self, ctx:NPCScriptParser.ChoiceStatementContext):
+        pass
+
+    # Exit a parse tree produced by NPCScriptParser#choiceStatement.
+    def exitChoiceStatement(self, ctx:NPCScriptParser.ChoiceStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NPCScriptParser#choiceOption.
+    def enterChoiceOption(self, ctx:NPCScriptParser.ChoiceOptionContext):
+        pass
+
+    # Exit a parse tree produced by NPCScriptParser#choiceOption.
+    def exitChoiceOption(self, ctx:NPCScriptParser.ChoiceOptionContext):
+        pass
+
+
+    # Enter a parse tree produced by NPCScriptParser#emotionStatement.
+    def enterEmotionStatement(self, ctx:NPCScriptParser.EmotionStatementContext):
+        pass
+
+    # Exit a parse tree produced by NPCScriptParser#emotionStatement.
+    def exitEmotionStatement(self, ctx:NPCScriptParser.EmotionStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NPCScriptParser#animationStatement.
+    def enterAnimationStatement(self, ctx:NPCScriptParser.AnimationStatementContext):
+        pass
+
+    # Exit a parse tree produced by NPCScriptParser#animationStatement.
+    def exitAnimationStatement(self, ctx:NPCScriptParser.AnimationStatementContext):
+        pass
+
+
+    # Enter a parse tree produced by NPCScriptParser#waitStatement.
+    def enterWaitStatement(self, ctx:NPCScriptParser.WaitStatementContext):
+        pass
+
+    # Exit a parse tree produced by NPCScriptParser#waitStatement.
+    def exitWaitStatement(self, ctx:NPCScriptParser.WaitStatementContext):
+        pass
+
+
     # Enter a parse tree produced by NPCScriptParser#actionStatement.
     def enterActionStatement(self, ctx:NPCScriptParser.ActionStatementContext):
         pass
@@ -68,6 +158,15 @@ class NPCScriptListener(ParseTreeListener):
 
     # Exit a parse tree produced by NPCScriptParser#condition.
     def exitCondition(self, ctx:NPCScriptParser.ConditionContext):
+        pass
+
+
+    # Enter a parse tree produced by NPCScriptParser#comparator.
+    def enterComparator(self, ctx:NPCScriptParser.ComparatorContext):
+        pass
+
+    # Exit a parse tree produced by NPCScriptParser#comparator.
+    def exitComparator(self, ctx:NPCScriptParser.ComparatorContext):
         pass
 
 

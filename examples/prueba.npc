@@ -1,13 +1,31 @@
-npc "guerrero" iniciaEn "patrullar"
+npc "Guardia" iniciaEn "inicio"
 
-@estado "patrullar"
-    mover("norte");
-    if enemigoCerca() then goto "atacar"
+@estado "inicio"
+say "¡Alto ahí! ¿Quién eres?";
+if jugadorTieneItem("pase") then goto "permitido";
+goto "rechazado";
 
-@estado "atacar"
-    atacar();
-    if enemigoHuye() then goto "perseguir"
+@estado "permitido"
+say "Ve con cuidado.";
+playAnimation("saludar");
+goto "fin";
 
-@estado "perseguir"
-    mover("enemigo");
-    if perdidoDeVista() then goto "patrullar"
+@estado "rechazado"
+say "No puedes pasar sin un pase.";
+choice {
+  "¿Dónde consigo un pase?" -> goto "ayuda";
+  "Me voy..." -> goto "fin";
+}
+
+@estado "ayuda"
+say "Puedes encontrar uno en la tienda del este.";
+emotion("pensativo");
+wait 3 seconds;
+goto "fin";
+
+@estado "fin"
+say "Fin del diálogo.";
+
+on "jugadorSeAcerca"
+say "¿Necesitas algo?";
+end
