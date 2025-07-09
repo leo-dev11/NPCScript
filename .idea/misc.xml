@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="proto_transcriber" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="proto_transcriber" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13" project-jdk-type="Python SDK" />
 </project>

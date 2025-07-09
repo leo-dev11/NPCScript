@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+e377eecf7caddd0d2ad37f938a192f8d antlr4cpp_generated_src/NPCScript/NPCScriptLexer.interp

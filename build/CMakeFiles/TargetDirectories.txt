@@ -1,0 +1,8 @@
+/compilers/NPCScript/build/CMakeFiles/intrinsics_gen.dir
+/compilers/NPCScript/build/CMakeFiles/vt_gen.dir
+/compilers/NPCScript/build/CMakeFiles/omp_gen.dir
+/compilers/NPCScript/build/CMakeFiles/acc_gen.dir
+/compilers/NPCScript/build/CMakeFiles/target_parser_gen.dir
+/compilers/NPCScript/build/CMakeFiles/NPCScript.dir
+/compilers/NPCScript/build/CMakeFiles/edit_cache.dir
+/compilers/NPCScript/build/CMakeFiles/rebuild_cache.dir

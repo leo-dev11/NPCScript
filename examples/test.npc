@@ -1,0 +1,4 @@
+npc "miNPC" iniciaEn "inicio"
+
+@estado "inicio"
+    say "¡Funciona!";

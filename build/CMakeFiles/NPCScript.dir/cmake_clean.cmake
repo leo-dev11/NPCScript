@@ -1,0 +1,40 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/NPCScript.dir/link.d"
+  "CMakeFiles/NPCScript.dir/antlr4cpp_generated_src/NPCScript/NPCScriptBaseListener.cpp.o"
+  "CMakeFiles/NPCScript.dir/antlr4cpp_generated_src/NPCScript/NPCScriptBaseListener.cpp.o.d"
+  "CMakeFiles/NPCScript.dir/antlr4cpp_generated_src/NPCScript/NPCScriptBaseVisitor.cpp.o"
+  "CMakeFiles/NPCScript.dir/antlr4cpp_generated_src/NPCScript/NPCScriptBaseVisitor.cpp.o.d"
+  "CMakeFiles/NPCScript.dir/antlr4cpp_generated_src/NPCScript/NPCScriptLexer.cpp.o"
+  "CMakeFiles/NPCScript.dir/antlr4cpp_generated_src/NPCScript/NPCScriptLexer.cpp.o.d"
+  "CMakeFiles/NPCScript.dir/antlr4cpp_generated_src/NPCScript/NPCScriptListener.cpp.o"
+  "CMakeFiles/NPCScript.dir/antlr4cpp_generated_src/NPCScript/NPCScriptListener.cpp.o.d"
+  "CMakeFiles/NPCScript.dir/antlr4cpp_generated_src/NPCScript/NPCScriptParser.cpp.o"
+  "CMakeFiles/NPCScript.dir/antlr4cpp_generated_src/NPCScript/NPCScriptParser.cpp.o.d"
+  "CMakeFiles/NPCScript.dir/antlr4cpp_generated_src/NPCScript/NPCScriptVisitor.cpp.o"
+  "CMakeFiles/NPCScript.dir/antlr4cpp_generated_src/NPCScript/NPCScriptVisitor.cpp.o.d"
+  "CMakeFiles/NPCScript.dir/src/NPCScriptIR.cpp.o"
+  "CMakeFiles/NPCScript.dir/src/NPCScriptIR.cpp.o.d"
+  "CMakeFiles/NPCScript.dir/src/main.cpp.o"
+  "CMakeFiles/NPCScript.dir/src/main.cpp.o.d"
+  "NPCScript"
+  "NPCScript.pdb"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptBaseListener.cpp"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptBaseListener.h"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptBaseVisitor.cpp"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptBaseVisitor.h"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptLexer.cpp"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptLexer.h"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptLexer.interp"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptLexer.tokens"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptListener.cpp"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptListener.h"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptParser.cpp"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptParser.h"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptVisitor.cpp"
+  "antlr4cpp_generated_src/NPCScript/NPCScriptVisitor.h"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/NPCScript.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
