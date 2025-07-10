@@ -1,0 +1,18 @@
+npc "pepe" iniciaEn "inicio"
+
+@estado "inicio"
+  x = 0;
+  say "Inicio del ciclo";
+
+  while x < 3 do
+    say "Dentro del ciclo";
+    x = x + 1;
+  end
+
+  say "Después del ciclo";
+
+  if x == 3 then goto "final";
+end
+
+@estado "final"
+  say "Llegaste al estado final";

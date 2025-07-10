@@ -1,0 +1,6 @@
+npc "pepe" iniciaEn "inicio"
+
+@estado "inicio"
+  x = 5;
+  y = x * 2;
+  say "listo";
