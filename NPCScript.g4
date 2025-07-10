@@ -47,17 +47,29 @@ condition
     : IDENTIFIER '(' (expr (',' expr)*)? ')'
     | expr comparator expr
     ;
+    
+comparator: EQ | NEQ | LT | GT | LEQ | GEQ;
 
-comparator: '==' | '!=' | '<' | '>' | '<=' | '>=';
+EQ: '==';
+NEQ: '!=';
+LT: '<';
+GT: '>';
+LEQ: '<=';
+GEQ: '>=';
 
-expr
-    : NUMBER
-    | STRING
-    | IDENTIFIER
-    | expr ('+' | '-' | '*' | '/') expr
-    | '(' expr ')'
-    ;
+expr : expr PLUS expr
+     | expr MINUS expr
+     | expr STAR expr
+     | expr SLASH expr
+     | '(' expr ')'
+     | NUMBER
+     | IDENTIFIER
+     ;
 
+PLUS: '+';
+MINUS: '-';
+STAR: '*';
+SLASH: '/';
 STRING: '"' ~["\r\n]* '"';
 IDENTIFIER: [a-zA-Z_][a-zA-Z_0-9]*;
 NUMBER: [0-9]+;

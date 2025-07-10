@@ -68,12 +68,13 @@ void npcscriptParserInitialize() {
     },
     std::vector<std::string>{
       "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 
-      "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 
-      "", "", "STRING", "IDENTIFIER", "NUMBER", "COMMENT", "WS"
+      "", "", "", "", "", "", "", "", "", "EQ", "NEQ", "LT", "GT", "LEQ", 
+      "GEQ", "PLUS", "MINUS", "STAR", "SLASH", "STRING", "IDENTIFIER", "NUMBER", 
+      "COMMENT", "WS"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,40,208,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
+  	4,1,40,216,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
   	7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,2,14,7,
   	14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,1,0,1,0,1,0,5,0,42,8,0,10,
   	0,12,0,45,9,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,2,1,2,1,2,5,2,57,8,2,10,2,
@@ -87,60 +88,63 @@ void npcscriptParserInitialize() {
   	1,15,5,15,158,8,15,10,15,12,15,161,9,15,3,15,163,8,15,1,15,1,15,3,15,
   	167,8,15,1,16,1,16,1,16,1,16,1,16,5,16,174,8,16,10,16,12,16,177,9,16,
   	3,16,179,8,16,1,16,1,16,1,16,1,16,1,16,3,16,186,8,16,1,17,1,17,1,18,1,
-  	18,1,18,1,18,1,18,1,18,1,18,1,18,3,18,198,8,18,1,18,1,18,1,18,5,18,203,
-  	8,18,10,18,12,18,206,9,18,1,18,0,1,36,19,0,2,4,6,8,10,12,14,16,18,20,
-  	22,24,26,28,30,32,34,36,0,3,1,0,23,24,1,0,26,31,1,0,32,35,221,0,43,1,
-  	0,0,0,2,48,1,0,0,0,4,53,1,0,0,0,6,61,1,0,0,0,8,81,1,0,0,0,10,83,1,0,0,
-  	0,12,89,1,0,0,0,14,100,1,0,0,0,16,105,1,0,0,0,18,111,1,0,0,0,20,116,1,
-  	0,0,0,22,125,1,0,0,0,24,132,1,0,0,0,26,139,1,0,0,0,28,146,1,0,0,0,30,
-  	152,1,0,0,0,32,185,1,0,0,0,34,187,1,0,0,0,36,197,1,0,0,0,38,42,3,2,1,
-  	0,39,42,3,4,2,0,40,42,3,6,3,0,41,38,1,0,0,0,41,39,1,0,0,0,41,40,1,0,0,
-  	0,42,45,1,0,0,0,43,41,1,0,0,0,43,44,1,0,0,0,44,46,1,0,0,0,45,43,1,0,0,
-  	0,46,47,5,0,0,1,47,1,1,0,0,0,48,49,5,1,0,0,49,50,5,36,0,0,50,51,5,2,0,
-  	0,51,52,5,36,0,0,52,3,1,0,0,0,53,54,5,3,0,0,54,58,5,36,0,0,55,57,3,8,
-  	4,0,56,55,1,0,0,0,57,60,1,0,0,0,58,56,1,0,0,0,58,59,1,0,0,0,59,5,1,0,
-  	0,0,60,58,1,0,0,0,61,62,5,4,0,0,62,66,5,36,0,0,63,65,3,8,4,0,64,63,1,
-  	0,0,0,65,68,1,0,0,0,66,64,1,0,0,0,66,67,1,0,0,0,67,69,1,0,0,0,68,66,1,
-  	0,0,0,69,70,5,5,0,0,70,7,1,0,0,0,71,82,3,10,5,0,72,82,3,12,6,0,73,82,
-  	3,30,15,0,74,82,3,16,8,0,75,82,3,18,9,0,76,82,3,20,10,0,77,82,3,28,14,
-  	0,78,82,3,14,7,0,79,82,3,24,12,0,80,82,3,26,13,0,81,71,1,0,0,0,81,72,
-  	1,0,0,0,81,73,1,0,0,0,81,74,1,0,0,0,81,75,1,0,0,0,81,76,1,0,0,0,81,77,
-  	1,0,0,0,81,78,1,0,0,0,81,79,1,0,0,0,81,80,1,0,0,0,82,9,1,0,0,0,83,84,
-  	5,6,0,0,84,85,3,32,16,0,85,86,5,7,0,0,86,87,5,8,0,0,87,88,5,36,0,0,88,
-  	11,1,0,0,0,89,90,5,9,0,0,90,91,3,32,16,0,91,95,5,10,0,0,92,94,3,8,4,0,
-  	93,92,1,0,0,0,94,97,1,0,0,0,95,93,1,0,0,0,95,96,1,0,0,0,96,98,1,0,0,0,
-  	97,95,1,0,0,0,98,99,5,5,0,0,99,13,1,0,0,0,100,101,5,8,0,0,101,103,5,36,
-  	0,0,102,104,5,11,0,0,103,102,1,0,0,0,103,104,1,0,0,0,104,15,1,0,0,0,105,
-  	106,5,37,0,0,106,107,5,12,0,0,107,109,3,36,18,0,108,110,5,11,0,0,109,
-  	108,1,0,0,0,109,110,1,0,0,0,110,17,1,0,0,0,111,112,5,13,0,0,112,114,5,
-  	36,0,0,113,115,5,11,0,0,114,113,1,0,0,0,114,115,1,0,0,0,115,19,1,0,0,
-  	0,116,117,5,14,0,0,117,119,5,15,0,0,118,120,3,22,11,0,119,118,1,0,0,0,
-  	120,121,1,0,0,0,121,119,1,0,0,0,121,122,1,0,0,0,122,123,1,0,0,0,123,124,
-  	5,16,0,0,124,21,1,0,0,0,125,126,5,36,0,0,126,127,5,17,0,0,127,128,5,8,
-  	0,0,128,130,5,36,0,0,129,131,5,11,0,0,130,129,1,0,0,0,130,131,1,0,0,0,
-  	131,23,1,0,0,0,132,133,5,18,0,0,133,134,5,19,0,0,134,135,5,36,0,0,135,
-  	137,5,20,0,0,136,138,5,11,0,0,137,136,1,0,0,0,137,138,1,0,0,0,138,25,
-  	1,0,0,0,139,140,5,21,0,0,140,141,5,19,0,0,141,142,5,36,0,0,142,144,5,
-  	20,0,0,143,145,5,11,0,0,144,143,1,0,0,0,144,145,1,0,0,0,145,27,1,0,0,
-  	0,146,147,5,22,0,0,147,148,5,38,0,0,148,150,7,0,0,0,149,151,5,11,0,0,
-  	150,149,1,0,0,0,150,151,1,0,0,0,151,29,1,0,0,0,152,153,5,37,0,0,153,162,
-  	5,19,0,0,154,159,3,36,18,0,155,156,5,25,0,0,156,158,3,36,18,0,157,155,
-  	1,0,0,0,158,161,1,0,0,0,159,157,1,0,0,0,159,160,1,0,0,0,160,163,1,0,0,
-  	0,161,159,1,0,0,0,162,154,1,0,0,0,162,163,1,0,0,0,163,164,1,0,0,0,164,
-  	166,5,20,0,0,165,167,5,11,0,0,166,165,1,0,0,0,166,167,1,0,0,0,167,31,
-  	1,0,0,0,168,169,5,37,0,0,169,178,5,19,0,0,170,175,3,36,18,0,171,172,5,
-  	25,0,0,172,174,3,36,18,0,173,171,1,0,0,0,174,177,1,0,0,0,175,173,1,0,
-  	0,0,175,176,1,0,0,0,176,179,1,0,0,0,177,175,1,0,0,0,178,170,1,0,0,0,178,
-  	179,1,0,0,0,179,180,1,0,0,0,180,186,5,20,0,0,181,182,3,36,18,0,182,183,
-  	3,34,17,0,183,184,3,36,18,0,184,186,1,0,0,0,185,168,1,0,0,0,185,181,1,
-  	0,0,0,186,33,1,0,0,0,187,188,7,1,0,0,188,35,1,0,0,0,189,190,6,18,-1,0,
-  	190,198,5,38,0,0,191,198,5,36,0,0,192,198,5,37,0,0,193,194,5,19,0,0,194,
-  	195,3,36,18,0,195,196,5,20,0,0,196,198,1,0,0,0,197,189,1,0,0,0,197,191,
-  	1,0,0,0,197,192,1,0,0,0,197,193,1,0,0,0,198,204,1,0,0,0,199,200,10,2,
-  	0,0,200,201,7,2,0,0,201,203,3,36,18,3,202,199,1,0,0,0,203,206,1,0,0,0,
-  	204,202,1,0,0,0,204,205,1,0,0,0,205,37,1,0,0,0,206,204,1,0,0,0,22,41,
-  	43,58,66,81,95,103,109,114,121,130,137,144,150,159,162,166,175,178,185,
-  	197,204
+  	18,1,18,1,18,1,18,1,18,1,18,3,18,197,8,18,1,18,1,18,1,18,1,18,1,18,1,
+  	18,1,18,1,18,1,18,1,18,1,18,1,18,5,18,211,8,18,10,18,12,18,214,9,18,1,
+  	18,0,1,36,19,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,0,2,
+  	1,0,23,24,1,0,26,31,231,0,43,1,0,0,0,2,48,1,0,0,0,4,53,1,0,0,0,6,61,1,
+  	0,0,0,8,81,1,0,0,0,10,83,1,0,0,0,12,89,1,0,0,0,14,100,1,0,0,0,16,105,
+  	1,0,0,0,18,111,1,0,0,0,20,116,1,0,0,0,22,125,1,0,0,0,24,132,1,0,0,0,26,
+  	139,1,0,0,0,28,146,1,0,0,0,30,152,1,0,0,0,32,185,1,0,0,0,34,187,1,0,0,
+  	0,36,196,1,0,0,0,38,42,3,2,1,0,39,42,3,4,2,0,40,42,3,6,3,0,41,38,1,0,
+  	0,0,41,39,1,0,0,0,41,40,1,0,0,0,42,45,1,0,0,0,43,41,1,0,0,0,43,44,1,0,
+  	0,0,44,46,1,0,0,0,45,43,1,0,0,0,46,47,5,0,0,1,47,1,1,0,0,0,48,49,5,1,
+  	0,0,49,50,5,36,0,0,50,51,5,2,0,0,51,52,5,36,0,0,52,3,1,0,0,0,53,54,5,
+  	3,0,0,54,58,5,36,0,0,55,57,3,8,4,0,56,55,1,0,0,0,57,60,1,0,0,0,58,56,
+  	1,0,0,0,58,59,1,0,0,0,59,5,1,0,0,0,60,58,1,0,0,0,61,62,5,4,0,0,62,66,
+  	5,36,0,0,63,65,3,8,4,0,64,63,1,0,0,0,65,68,1,0,0,0,66,64,1,0,0,0,66,67,
+  	1,0,0,0,67,69,1,0,0,0,68,66,1,0,0,0,69,70,5,5,0,0,70,7,1,0,0,0,71,82,
+  	3,10,5,0,72,82,3,12,6,0,73,82,3,30,15,0,74,82,3,16,8,0,75,82,3,18,9,0,
+  	76,82,3,20,10,0,77,82,3,28,14,0,78,82,3,14,7,0,79,82,3,24,12,0,80,82,
+  	3,26,13,0,81,71,1,0,0,0,81,72,1,0,0,0,81,73,1,0,0,0,81,74,1,0,0,0,81,
+  	75,1,0,0,0,81,76,1,0,0,0,81,77,1,0,0,0,81,78,1,0,0,0,81,79,1,0,0,0,81,
+  	80,1,0,0,0,82,9,1,0,0,0,83,84,5,6,0,0,84,85,3,32,16,0,85,86,5,7,0,0,86,
+  	87,5,8,0,0,87,88,5,36,0,0,88,11,1,0,0,0,89,90,5,9,0,0,90,91,3,32,16,0,
+  	91,95,5,10,0,0,92,94,3,8,4,0,93,92,1,0,0,0,94,97,1,0,0,0,95,93,1,0,0,
+  	0,95,96,1,0,0,0,96,98,1,0,0,0,97,95,1,0,0,0,98,99,5,5,0,0,99,13,1,0,0,
+  	0,100,101,5,8,0,0,101,103,5,36,0,0,102,104,5,11,0,0,103,102,1,0,0,0,103,
+  	104,1,0,0,0,104,15,1,0,0,0,105,106,5,37,0,0,106,107,5,12,0,0,107,109,
+  	3,36,18,0,108,110,5,11,0,0,109,108,1,0,0,0,109,110,1,0,0,0,110,17,1,0,
+  	0,0,111,112,5,13,0,0,112,114,5,36,0,0,113,115,5,11,0,0,114,113,1,0,0,
+  	0,114,115,1,0,0,0,115,19,1,0,0,0,116,117,5,14,0,0,117,119,5,15,0,0,118,
+  	120,3,22,11,0,119,118,1,0,0,0,120,121,1,0,0,0,121,119,1,0,0,0,121,122,
+  	1,0,0,0,122,123,1,0,0,0,123,124,5,16,0,0,124,21,1,0,0,0,125,126,5,36,
+  	0,0,126,127,5,17,0,0,127,128,5,8,0,0,128,130,5,36,0,0,129,131,5,11,0,
+  	0,130,129,1,0,0,0,130,131,1,0,0,0,131,23,1,0,0,0,132,133,5,18,0,0,133,
+  	134,5,19,0,0,134,135,5,36,0,0,135,137,5,20,0,0,136,138,5,11,0,0,137,136,
+  	1,0,0,0,137,138,1,0,0,0,138,25,1,0,0,0,139,140,5,21,0,0,140,141,5,19,
+  	0,0,141,142,5,36,0,0,142,144,5,20,0,0,143,145,5,11,0,0,144,143,1,0,0,
+  	0,144,145,1,0,0,0,145,27,1,0,0,0,146,147,5,22,0,0,147,148,5,38,0,0,148,
+  	150,7,0,0,0,149,151,5,11,0,0,150,149,1,0,0,0,150,151,1,0,0,0,151,29,1,
+  	0,0,0,152,153,5,37,0,0,153,162,5,19,0,0,154,159,3,36,18,0,155,156,5,25,
+  	0,0,156,158,3,36,18,0,157,155,1,0,0,0,158,161,1,0,0,0,159,157,1,0,0,0,
+  	159,160,1,0,0,0,160,163,1,0,0,0,161,159,1,0,0,0,162,154,1,0,0,0,162,163,
+  	1,0,0,0,163,164,1,0,0,0,164,166,5,20,0,0,165,167,5,11,0,0,166,165,1,0,
+  	0,0,166,167,1,0,0,0,167,31,1,0,0,0,168,169,5,37,0,0,169,178,5,19,0,0,
+  	170,175,3,36,18,0,171,172,5,25,0,0,172,174,3,36,18,0,173,171,1,0,0,0,
+  	174,177,1,0,0,0,175,173,1,0,0,0,175,176,1,0,0,0,176,179,1,0,0,0,177,175,
+  	1,0,0,0,178,170,1,0,0,0,178,179,1,0,0,0,179,180,1,0,0,0,180,186,5,20,
+  	0,0,181,182,3,36,18,0,182,183,3,34,17,0,183,184,3,36,18,0,184,186,1,0,
+  	0,0,185,168,1,0,0,0,185,181,1,0,0,0,186,33,1,0,0,0,187,188,7,1,0,0,188,
+  	35,1,0,0,0,189,190,6,18,-1,0,190,191,5,19,0,0,191,192,3,36,18,0,192,193,
+  	5,20,0,0,193,197,1,0,0,0,194,197,5,38,0,0,195,197,5,37,0,0,196,189,1,
+  	0,0,0,196,194,1,0,0,0,196,195,1,0,0,0,197,212,1,0,0,0,198,199,10,7,0,
+  	0,199,200,5,32,0,0,200,211,3,36,18,8,201,202,10,6,0,0,202,203,5,33,0,
+  	0,203,211,3,36,18,7,204,205,10,5,0,0,205,206,5,34,0,0,206,211,3,36,18,
+  	6,207,208,10,4,0,0,208,209,5,35,0,0,209,211,3,36,18,5,210,198,1,0,0,0,
+  	210,201,1,0,0,0,210,204,1,0,0,0,210,207,1,0,0,0,211,214,1,0,0,0,212,210,
+  	1,0,0,0,212,213,1,0,0,0,213,37,1,0,0,0,214,212,1,0,0,0,23,41,43,58,66,
+  	81,95,103,109,114,121,130,137,144,150,159,162,166,175,178,185,196,210,
+  	212
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -1560,7 +1564,7 @@ NPCScriptParser::ActionStatementContext* NPCScriptParser::actionStatement() {
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 481036861440) != 0)) {
+      ((1ULL << _la) & 412317384704) != 0)) {
       setState(154);
       expr(0);
       setState(159);
@@ -1671,7 +1675,7 @@ NPCScriptParser::ConditionContext* NPCScriptParser::condition() {
 
       _la = _input->LA(1);
       if ((((_la & ~ 0x3fULL) == 0) &&
-        ((1ULL << _la) & 481036861440) != 0)) {
+        ((1ULL << _la) & 412317384704) != 0)) {
         setState(170);
         expr(0);
         setState(175);
@@ -1721,6 +1725,30 @@ NPCScriptParser::ConditionContext* NPCScriptParser::condition() {
 
 NPCScriptParser::ComparatorContext::ComparatorContext(ParserRuleContext *parent, size_t invokingState)
   : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* NPCScriptParser::ComparatorContext::EQ() {
+  return getToken(NPCScriptParser::EQ, 0);
+}
+
+tree::TerminalNode* NPCScriptParser::ComparatorContext::NEQ() {
+  return getToken(NPCScriptParser::NEQ, 0);
+}
+
+tree::TerminalNode* NPCScriptParser::ComparatorContext::LT() {
+  return getToken(NPCScriptParser::LT, 0);
+}
+
+tree::TerminalNode* NPCScriptParser::ComparatorContext::GT() {
+  return getToken(NPCScriptParser::GT, 0);
+}
+
+tree::TerminalNode* NPCScriptParser::ComparatorContext::LEQ() {
+  return getToken(NPCScriptParser::LEQ, 0);
+}
+
+tree::TerminalNode* NPCScriptParser::ComparatorContext::GEQ() {
+  return getToken(NPCScriptParser::GEQ, 0);
 }
 
 
@@ -1789,24 +1817,36 @@ NPCScriptParser::ExprContext::ExprContext(ParserRuleContext *parent, size_t invo
   : ParserRuleContext(parent, invokingState) {
 }
 
-tree::TerminalNode* NPCScriptParser::ExprContext::NUMBER() {
-  return getToken(NPCScriptParser::NUMBER, 0);
-}
-
-tree::TerminalNode* NPCScriptParser::ExprContext::STRING() {
-  return getToken(NPCScriptParser::STRING, 0);
-}
-
-tree::TerminalNode* NPCScriptParser::ExprContext::IDENTIFIER() {
-  return getToken(NPCScriptParser::IDENTIFIER, 0);
-}
-
 std::vector<NPCScriptParser::ExprContext *> NPCScriptParser::ExprContext::expr() {
   return getRuleContexts<NPCScriptParser::ExprContext>();
 }
 
 NPCScriptParser::ExprContext* NPCScriptParser::ExprContext::expr(size_t i) {
   return getRuleContext<NPCScriptParser::ExprContext>(i);
+}
+
+tree::TerminalNode* NPCScriptParser::ExprContext::NUMBER() {
+  return getToken(NPCScriptParser::NUMBER, 0);
+}
+
+tree::TerminalNode* NPCScriptParser::ExprContext::IDENTIFIER() {
+  return getToken(NPCScriptParser::IDENTIFIER, 0);
+}
+
+tree::TerminalNode* NPCScriptParser::ExprContext::PLUS() {
+  return getToken(NPCScriptParser::PLUS, 0);
+}
+
+tree::TerminalNode* NPCScriptParser::ExprContext::MINUS() {
+  return getToken(NPCScriptParser::MINUS, 0);
+}
+
+tree::TerminalNode* NPCScriptParser::ExprContext::STAR() {
+  return getToken(NPCScriptParser::STAR, 0);
+}
+
+tree::TerminalNode* NPCScriptParser::ExprContext::SLASH() {
+  return getToken(NPCScriptParser::SLASH, 0);
 }
 
 
@@ -1848,7 +1888,7 @@ NPCScriptParser::ExprContext* NPCScriptParser::expr(int precedence) {
   size_t startState = 36;
   enterRecursionRule(_localctx, 36, NPCScriptParser::RuleExpr, precedence);
 
-    size_t _la = 0;
+    
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1860,34 +1900,28 @@ NPCScriptParser::ExprContext* NPCScriptParser::expr(int precedence) {
   try {
     size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(197);
+    setState(196);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
-      case NPCScriptParser::NUMBER: {
+      case NPCScriptParser::T__18: {
         setState(190);
+        match(NPCScriptParser::T__18);
+        setState(191);
+        expr(0);
+        setState(192);
+        match(NPCScriptParser::T__19);
+        break;
+      }
+
+      case NPCScriptParser::NUMBER: {
+        setState(194);
         match(NPCScriptParser::NUMBER);
         break;
       }
 
-      case NPCScriptParser::STRING: {
-        setState(191);
-        match(NPCScriptParser::STRING);
-        break;
-      }
-
       case NPCScriptParser::IDENTIFIER: {
-        setState(192);
-        match(NPCScriptParser::IDENTIFIER);
-        break;
-      }
-
-      case NPCScriptParser::T__18: {
-        setState(193);
-        match(NPCScriptParser::T__18);
-        setState(194);
-        expr(0);
         setState(195);
-        match(NPCScriptParser::T__19);
+        match(NPCScriptParser::IDENTIFIER);
         break;
       }
 
@@ -1895,35 +1929,76 @@ NPCScriptParser::ExprContext* NPCScriptParser::expr(int precedence) {
       throw NoViableAltException(this);
     }
     _ctx->stop = _input->LT(-1);
-    setState(204);
+    setState(212);
     _errHandler->sync(this);
-    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 21, _ctx);
+    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 22, _ctx);
     while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
       if (alt == 1) {
         if (!_parseListeners.empty())
           triggerExitRuleEvent();
         previousContext = _localctx;
-        _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
-        pushNewRecursionContext(_localctx, startState, RuleExpr);
-        setState(199);
+        setState(210);
+        _errHandler->sync(this);
+        switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 21, _ctx)) {
+        case 1: {
+          _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
+          pushNewRecursionContext(_localctx, startState, RuleExpr);
+          setState(198);
 
-        if (!(precpred(_ctx, 2))) throw FailedPredicateException(this, "precpred(_ctx, 2)");
-        setState(200);
-        _la = _input->LA(1);
-        if (!((((_la & ~ 0x3fULL) == 0) &&
-          ((1ULL << _la) & 64424509440) != 0))) {
-        _errHandler->recoverInline(this);
+          if (!(precpred(_ctx, 7))) throw FailedPredicateException(this, "precpred(_ctx, 7)");
+          setState(199);
+          match(NPCScriptParser::PLUS);
+          setState(200);
+          expr(8);
+          break;
         }
-        else {
-          _errHandler->reportMatch(this);
-          consume();
+
+        case 2: {
+          _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
+          pushNewRecursionContext(_localctx, startState, RuleExpr);
+          setState(201);
+
+          if (!(precpred(_ctx, 6))) throw FailedPredicateException(this, "precpred(_ctx, 6)");
+          setState(202);
+          match(NPCScriptParser::MINUS);
+          setState(203);
+          expr(7);
+          break;
         }
-        setState(201);
-        expr(3); 
+
+        case 3: {
+          _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
+          pushNewRecursionContext(_localctx, startState, RuleExpr);
+          setState(204);
+
+          if (!(precpred(_ctx, 5))) throw FailedPredicateException(this, "precpred(_ctx, 5)");
+          setState(205);
+          match(NPCScriptParser::STAR);
+          setState(206);
+          expr(6);
+          break;
+        }
+
+        case 4: {
+          _localctx = _tracker.createInstance<ExprContext>(parentContext, parentState);
+          pushNewRecursionContext(_localctx, startState, RuleExpr);
+          setState(207);
+
+          if (!(precpred(_ctx, 4))) throw FailedPredicateException(this, "precpred(_ctx, 4)");
+          setState(208);
+          match(NPCScriptParser::SLASH);
+          setState(209);
+          expr(5);
+          break;
+        }
+
+        default:
+          break;
+        } 
       }
-      setState(206);
+      setState(214);
       _errHandler->sync(this);
-      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 21, _ctx);
+      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 22, _ctx);
     }
   }
   catch (RecognitionException &e) {
@@ -1946,7 +2021,10 @@ bool NPCScriptParser::sempred(RuleContext *context, size_t ruleIndex, size_t pre
 
 bool NPCScriptParser::exprSempred(ExprContext *_localctx, size_t predicateIndex) {
   switch (predicateIndex) {
-    case 0: return precpred(_ctx, 2);
+    case 0: return precpred(_ctx, 7);
+    case 1: return precpred(_ctx, 6);
+    case 2: return precpred(_ctx, 5);
+    case 3: return precpred(_ctx, 4);
 
   default:
     break;
