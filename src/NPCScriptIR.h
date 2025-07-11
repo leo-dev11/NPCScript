@@ -29,7 +29,7 @@ public:
   std::any visitAssignment(NPCScriptParser::AssignmentContext *ctx) override;
   std::any visitExpr(NPCScriptParser::ExprContext *ctx) override;
   std::any visitTransitionStatement(NPCScriptParser::TransitionStatementContext *ctx) override;
-  //std::any visitWaitStatement(NPCScriptParser::WaitStatementContext *ctx) override;
+  std::any visitWaitStatement(NPCScriptParser::WaitStatementContext *ctx) override;
   std::any visitCondition(NPCScriptParser::ConditionContext *ctx) override;
   std::any visitIfStatement(NPCScriptParser::IfStatementContext *ctx) override;
   std::any visitWhileStatement(NPCScriptParser::WhileStatementContext *ctx) override;

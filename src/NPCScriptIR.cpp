@@ -305,3 +305,24 @@ std::any NPCScriptIR::visitActionStatement(NPCScriptParser::ActionStatementConte
 
   return nullptr;
 }
+
+std::any NPCScriptIR::visitWaitStatement(NPCScriptParser::WaitStatementContext *ctx) {
+    int duration = std::stoi(ctx->NUMBER()->getText());
+    std::string unit = ctx->children[2]->getText(); // "seconds" o "ms"
+
+    if (unit == "seconds") {
+        // Llamar a sleep(int)
+        FunctionCallee sleepFunc = M->getOrInsertFunction(
+            "sleep", llvm::FunctionType::get(i32Ty, {i32Ty}, false));
+        builder->CreateCall(sleepFunc, {builder->getInt32(duration)});
+    } else if (unit == "ms") {
+        // Llamar a usleep(int) -> microsegundos = milisegundos * 1000
+        FunctionCallee usleepFunc = M->getOrInsertFunction(
+            "usleep", llvm::FunctionType::get(i32Ty, {i32Ty}, false));
+        builder->CreateCall(usleepFunc, {builder->getInt32(duration * 1000)});
+    } else {
+        std::cerr << "Unidad de tiempo no reconocida en wait: " << unit << "\n";
+    }
+
+    return nullptr;
+}

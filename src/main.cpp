@@ -54,6 +54,6 @@ int main(int argc, const char *argv[]) {
   return 0;
 }
 
+// ./NPCScript ../examples/test.npc
 // clang out.ll -o npc_exec -> para generar con clang
 // ./npc_exec -> para generar el resultado
-// ./NPCScript ../examples/test.npc

@@ -1,0 +1,10 @@
+npc "esperador" iniciaEn "inicio"
+
+@estado "inicio"
+  say "Hola, voy a esperar 2 segundos";
+  wait 2 seconds;
+
+  say "Ahora espero 500 milisegundos";
+  wait 500 ms;
+
+  say "¡Listo! Terminé de esperar.";

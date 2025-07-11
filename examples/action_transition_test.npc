@@ -1,0 +1,13 @@
+npc "guerrero" iniciaEn "inicio"
+
+@estado "inicio"
+  enemigo = 42;           // <- asignación válida
+  atacar(enemigo);        // <- ahora sí existe
+  goto "siguiente";
+
+@estado "siguiente"
+  say "Transición a siguiente estado";
+  goto "final";
+
+@estado "final"
+  say "Fin del ejemplo";
